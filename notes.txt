@@ -1,0 +1,60 @@
+WHAT IS NGRX?
+  NgRx is an open source library that provides reactive state management for your Angular applications.
+  Inspired by Redux, NgRx provides a way to maintain data in your Angular application as a single source of truth.
+  NgRx uses streams to interact with a data store. 
+
+WHY NGRX?
+ 1. There are variables that need to be accessed/shared in multiple components.
+    For example in an app, every component generates an API call. Instead of using/repeating
+    loading icon in each component, we are using a global loading icon each time a request is processed.
+
+2. You get the benefits of NgRx DevTools,
+    can see changing the state, actions 
+    for example, using Time Travel feature, you can view the app state at any given time in the past.
+
+    Store:
+    Instead of managing state independently inside each component with input output,
+    we have a single source in the app to manage state, which is called Store.
+
+    Action:
+        Action, in simple words, is a verb. For example “create a post”, “delete a post”, etc.
+        When you dispatch an action from a component, you are basically asking for some change in the store.
+
+
+summary::- 
+STORE
+Your application’s state is maintained in the store. The store is immutable.
+
+SELECTOR
+Your application’s components can subscribe to the store and get automatic updates of state through selectors.
+Selectors enable components to get a slice (a part) of your application’s state, and also
+ mutate state with selector functions.
+
+ACTIONS
+Actions modify the state of the store by using reducers (functions) that enable changes while keeping it immutable.
+
+REDUCERS:
+    Reducers are responsible for changing the state in your store. A reducer takes in an action (based on the action type)
+    and whatever logic is written in it decides if the state should change or not. 
+    A reducer is a pure function which means that it only works with the input parameters passed to it,
+    without causing side effects (affecting/modifying anything outside its scope).
+
+EFFECTS
+  Effects occur as a result from actions, and can also create actions when called. Effects primary responsibility is to
+  create async side-effects (like service calls to APIs), that ultimately generate other actions.
+
+
+
+BENIFITS
+ 1. Centralized, Immutable State
+    All relevant application state exists in one location. This makes it easier to track down problems,
+    as a snapshot of state at the time of an error can provide important insight and make it easy to recreate issues
+
+2. Performance
+    Since state is centralized at the top of your application, data updates can flow down through your components
+    relying on slices of store.
+
+3. Testability
+    All state updates are handled in reducers, which are pure functions. Pure functions are extremely simple to test, 
+    as it is simply input in, assert against output. This enables the testing of the most
+    crucial aspects of your application without mocks, spies, or other tricks that can make testing both complex and error prone.    

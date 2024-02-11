@@ -20,7 +20,6 @@ WHY NGRX?
         Action, in simple words, is a verb. For example “create a post”, “delete a post”, etc.
         When you dispatch an action from a component, you are basically asking for some change in the store.
 
-
 summary::- 
 STORE
 Your application’s state is maintained in the store. The store is immutable.
@@ -42,8 +41,6 @@ REDUCERS:
 EFFECTS
   Effects occur as a result from actions, and can also create actions when called. Effects primary responsibility is to
   create async side-effects (like service calls to APIs), that ultimately generate other actions.
-
-
 
 BENIFITS
  1. Centralized, Immutable State
